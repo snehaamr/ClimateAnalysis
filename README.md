@@ -3,26 +3,6 @@ Climate Data Analysis with Hadoop, Pig, and D3.js
 
 This project processes climate data for the United States over the past 50 years using Apache Pig on Hadoop. It aggregates the average temperature and total precipitation for each year and visualizes the results using D3.js in a web-based dashboard.
 
-Project Structure
-The project is organized into the following directories:
-
-arduino
-Copy code
-climate-analysis/
-├── hadoop-pig-scripts/
-│   ├── 1_load_and_filter_data.pig
-│   ├── 2_analyze_climate.pig
-│   └── 3_store_results.pig
-├── frontend/
-│   ├── index.html
-│   ├── script.js
-│   ├── style.css (optional)
-│   └── json_output/
-│       └── avg_temp_precip_by_year.json
-└── README.md
-hadoop-pig-scripts/: Contains the Pig scripts to process and aggregate the climate data.
-frontend/: Contains the HTML, JavaScript, and D3.js code to visualize the climate data.
-README.md: This file provides an overview of the project.
 Prerequisites
 Before running this project, ensure you have the following:
 
