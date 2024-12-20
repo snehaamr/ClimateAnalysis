@@ -1,0 +1,10 @@
+-- Load the analysis results from the previous step.
+avg_temp_precip = LOAD '/data/output/avg_temp_precip_by_year' USING PigStorage(',')
+                  AS (year:int, avg_temp:float, total_precip:float);
+
+-- Optionally, further process or filter data (e.g., only years with temperature > 30C).
+-- Example: Filtering years with average temperature above 30C.
+high_temp_years = FILTER avg_temp_precip BY avg_temp > 30;
+
+-- Store the results of the filtered analysis into HDFS for further review.
+STORE high_temp_years INTO '/data/output/high_temp_years' USING PigStorage(',');

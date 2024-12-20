@@ -1,0 +1,14 @@
+-- Load the filtered climate data from the previous step.
+filtered_data = LOAD '/data/output/filtered_climate_data' USING PigStorage(',')
+               AS (date:chararray, temperature:float, precipitation:float, location:chararray, country:chararray, year:int);
+
+-- Group the data by year.
+grouped_data = GROUP filtered_data BY year;
+
+-- Compute the average temperature and total precipitation per year.
+avg_temp_precip = FOREACH grouped_data GENERATE group AS year,
+                                     AVG(filtered_data.temperature) AS avg_temp,
+                                     SUM(filtered_data.precipitation) AS total_precip;
+
+-- Store the results of the analysis (avg_temp and total_precip) into HDFS.
+STORE avg_temp_precip INTO '/data/output/avg_temp_precip_by_year' USING PigStorage(',');

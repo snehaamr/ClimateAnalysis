@@ -1,0 +1,21 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background-color: #f4f4f9;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+#temperature-chart, #precipitation-chart {
+    width: 80%;
+    height: 400px;
+    margin: 20px auto;
+}
+
+.axis path, .axis line {
+    fill: none;
+    shape-rendering: crispEdges;
+}
