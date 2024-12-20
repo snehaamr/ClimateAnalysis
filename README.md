@@ -3,9 +3,6 @@ Climate Data Analysis with Hadoop, Pig, and D3.js
 
 This project processes climate data for the United States over the past 50 years using Apache Pig on Hadoop. It aggregates the average temperature and total precipitation for each year and visualizes the results using D3.js in a web-based dashboard.
 
-Prerequisites
-Before running this project, ensure you have the following:
-
 Hadoop Cluster: A running Hadoop cluster (either local or distributed).
 Apache Pig: Installed and configured to run on Hadoop's MapReduce mode.
 D3.js: Used for the frontend to visualize the results.
@@ -24,8 +21,6 @@ Setup
 Step 1: Upload Climate Data to HDFS
 Before running the Pig scripts, upload your climate data to the Hadoop Distributed File System (HDFS).
 
-bash
-Copy code
 hadoop fs -put /path/to/climate_data.csv /user/data/climate_data.csv
 Step 2: Pig Scripts
 There are three Pig scripts in the hadoop-pig-scripts/ directory. These scripts are designed to run on Hadoop's MapReduce framework.
